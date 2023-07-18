@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "portfolio_advisories",
+  "info": {
+    "singularName": "portfolio-advisory",
+    "pluralName": "portfolio-advisories",
+    "displayName": "portfolio-advisory",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "vendor": {
+      "type": "string",
+      "required": false
+    },
+    "powered_by": {
+      "type": "string"
+    },
+    "short_description": {
+      "type": "text"
+    },
+    "minInvestment": {
+      "type": "decimal",
+      "required": true
+    },
+    "image_path": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "landing_page": {
+      "type": "string"
+    },
+    "risk": {
+      "type": "decimal"
+    },
+    "cagr": {
+      "type": "json"
+    },
+    "portfolio_advisory_stocks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::portfolio-advisory-stock.portfolio-advisory-stock",
+      "mappedBy": "portfolio_advisory"
+    },
+    "overview": {
+      "type": "richtext"
+    }
+  }
+}

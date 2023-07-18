@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "portfolio_advisory_stocks",
+  "info": {
+    "singularName": "portfolio-advisory-stock",
+    "pluralName": "portfolio-advisory-stocks",
+    "displayName": "portfolio-advisory-stock",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "stock_name": {
+      "type": "string",
+      "required": true
+    },
+    "market_cap": {
+      "type": "string"
+    },
+    "weightage": {
+      "type": "decimal",
+      "required": true
+    },
+    "sector": {
+      "type": "string"
+    },
+    "tag": {
+      "type": "string"
+    },
+    "exchange": {
+      "type": "string",
+      "required": true
+    },
+    "token": {
+      "type": "string",
+      "required": true
+    },
+    "buy_price": {
+      "type": "decimal",
+      "required": true
+    },
+    "current_price": {
+      "type": "decimal"
+    },
+    "portfolio_advisory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::portfolio-advisory.portfolio-advisory",
+      "inversedBy": "portfolio_advisory_stocks"
+    }
+  }
+}
